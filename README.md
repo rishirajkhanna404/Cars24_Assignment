@@ -1,5 +1,9 @@
 # AI Operations Copilot - Cars24 Backend Assignment
 
+<video src="assets/demo.mp4" width="800" controls></video>
+
+
+
 An AI-powered backend service designed to help operations teams answer customer and operational queries about orders using natural language.
 
 ## Features
