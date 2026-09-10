@@ -1,0 +1,166 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.10/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.rishi.ai-copilot:demo >----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.1.1:run (default-cli) > test-compile @ demo >>>
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ demo ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ demo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ demo ---
+[INFO] skip non existing resourceDirectory /Users/sunstone/Downloads/demo 2/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ demo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.1.1:run (default-cli) < test-compile @ demo <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.1.1:run (default-cli) @ demo ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-09-10T08:37:03.053+05:30  INFO 85486 --- [ai-copilot] [           main] com.rishi.aicopilot.DemoApplication      : Starting DemoApplication using Java 25.0.2 with PID 85486 (/Users/sunstone/Downloads/demo 2/target/classes started by sunstone in /Users/sunstone/Downloads/demo 2)
+2026-09-10T08:37:03.054+05:30  INFO 85486 --- [ai-copilot] [           main] com.rishi.aicopilot.DemoApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T08:37:03.320+05:30  INFO 85486 --- [ai-copilot] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-10T08:37:03.340+05:30  INFO 85486 --- [ai-copilot] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2026-09-10T08:37:03.421+05:30  INFO 85486 --- [ai-copilot] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9c58c209-ad0f-3b90-ba5b-8bf9a2c8fc19
+2026-09-10T08:37:03.612+05:30  INFO 85486 --- [ai-copilot] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-10T08:37:03.616+05:30  INFO 85486 --- [ai-copilot] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-10T08:37:03.617+05:30  INFO 85486 --- [ai-copilot] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-10T08:37:03.633+05:30  INFO 85486 --- [ai-copilot] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 563 ms
+2026-09-10T08:37:03.714+05:30  INFO 85486 --- [ai-copilot] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-10T08:37:03.730+05:30  INFO 85486 --- [ai-copilot] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-10T08:37:03.852+05:30  INFO 85486 --- [ai-copilot] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-10T08:37:03.863+05:30  INFO 85486 --- [ai-copilot] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-10T08:37:03.918+05:30  INFO 85486 --- [ai-copilot] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-09-10T08:37:03.918+05:30  INFO 85486 --- [ai-copilot] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-10T08:37:03.926+05:30  WARN 85486 --- [ai-copilot] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-10T08:37:03.935+05:30  INFO 85486 --- [ai-copilot] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:testdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: TESTDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-10T08:37:04.252+05:30  INFO 85486 --- [ai-copilot] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table orders (id bigint not null, amount numeric(38,2) not null, customer_name varchar(255) not null, delivery_date date, order_date date not null, payment_status enum ('FAILED','PAID','PENDING','REFUNDED') not null, status enum ('CANCELLED','DELIVERED','PLACED','PROCESSING') not null, primary key (id))
+2026-09-10T08:37:04.272+05:30  INFO 85486 --- [ai-copilot] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-10T08:37:04.317+05:30  WARN 85486 --- [ai-copilot] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-10T08:37:04.376+05:30  INFO 85486 --- [ai-copilot] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-10T08:37:04.648+05:30  INFO 85486 --- [ai-copilot] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-09-10T08:37:04.703+05:30  INFO 85486 --- [ai-copilot] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-10T08:37:04.709+05:30  INFO 85486 --- [ai-copilot] [           main] com.rishi.aicopilot.DemoApplication      : Started DemoApplication in 1.787 seconds (process running for 1.966)
+2026-09-10T08:37:04.710+05:30  INFO 85486 --- [ai-copilot] [           main] com.rishi.aicopilot.seed.DataSeeder      : Seeding order data...
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: select o1_0.id,o1_0.amount,o1_0.customer_name,o1_0.delivery_date,o1_0.order_date,o1_0.payment_status,o1_0.status from orders o1_0 where o1_0.id=?
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into orders (amount,customer_name,delivery_date,order_date,payment_status,status,id) values (?,?,?,?,?,?,?)
+2026-09-10T08:37:04.760+05:30  INFO 85486 --- [ai-copilot] [           main] com.rishi.aicopilot.seed.DataSeeder      : Successfully seeded 30 orders.
+2026-09-10T08:37:11.309+05:30  INFO 85486 --- [ai-copilot] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-10T08:37:11.309+05:30  INFO 85486 --- [ai-copilot] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-10T08:37:11.310+05:30  INFO 85486 --- [ai-copilot] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-10T08:37:12.122+05:30 ERROR 85486 --- [ai-copilot] [nio-8080-exec-1] c.r.aicopilot.service.CopilotService     : Error processing query: [403 Forbidden] during [POST] to [https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key] [LlmFeignClient#chatCompletion(String,LlmRequest,String)]: [{
+  "error": {
+    "code": 403,
+    "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+]
+2026-09-10T08:37:12.363+05:30 ERROR 85486 --- [ai-copilot] [nio-8080-exec-3] c.r.aicopilot.service.CopilotService     : Error processing query: [403 Forbidden] during [POST] to [https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key] [LlmFeignClient#chatCompletion(String,LlmRequest,String)]: [{
+  "error": {
+    "code": 403,
+    "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+]
+2026-09-10T08:37:12.652+05:30 ERROR 85486 --- [ai-copilot] [nio-8080-exec-5] c.r.aicopilot.service.CopilotService     : Error processing query: [403 Forbidden] during [POST] to [https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key] [LlmFeignClient#chatCompletion(String,LlmRequest,String)]: [{
+  "error": {
+    "code": 403,
+    "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+]

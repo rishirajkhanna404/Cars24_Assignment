@@ -1,0 +1,111 @@
+package com.rishi.aicopilot.service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rishi.aicopilot.client.LlmFeignClient;
+import com.rishi.aicopilot.dto.*;
+import com.rishi.aicopilot.exception.OrderNotFoundException;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class CopilotService {
+
+    private final LlmFeignClient llmClient;
+    private final OrderService orderService;
+    private final ObjectMapper objectMapper;
+
+    @Value("${llm.api.key}")
+    private String apiKey;
+
+    public String processQuery(String question) {
+        try {
+            // Step 1: Intent Extraction
+            IntentResponse intent = extractIntent(question);
+            log.info("Extracted Intent: {} for Order ID: {}", intent.getIntent(), intent.getOrderId());
+
+            if ("unknown".equals(intent.getIntent()) || intent.getOrderId() == null) {
+                return "I'm sorry, I couldn't identify the order ID or the specific information you're looking for. Could you please provide the order number?";
+            }
+
+            // Step 2: Deterministic Lookup
+            Object orderData;
+            try {
+                orderData = switch (intent.getIntent()) {
+                    case "payment_status" -> orderService.getPaymentStatus(intent.getOrderId());
+                    case "delivery_status" -> orderService.getDeliveryStatus(intent.getOrderId());
+                    case "full_summary" -> orderService.getFullSummary(intent.getOrderId());
+                    default -> null;
+                };
+            } catch (OrderNotFoundException e) {
+                return "I found the request for order #" + intent.getOrderId() + ", but unfortunately, that order does not exist in our system.";
+            }
+
+            if (orderData == null) {
+                return "I understand you're asking about order #" + intent.getOrderId() + ", but I'm not sure exactly what information you need. Could you please be more specific?";
+            }
+
+            // Step 3: Natural Language Answer Generation
+            return generateFinalAnswer(question, orderData);
+        } catch (Exception e) {
+            log.error("Error processing query: {}", e.getMessage());
+            return "I'm having trouble connecting to my brain right now. Please try again in a few moments!";
+        }
+    }
+
+    private IntentResponse extractIntent(String question) {
+        String systemPrompt = "You are an intent extractor for an Order Management System. " +
+                "Analyze the user query and return ONLY a JSON object with the following keys: " +
+                "\"orderId\" (Long or null) and \"intent\" (one of: \"payment_status\", \"delivery_status\", \"full_summary\", \"unknown\"). " +
+                "If no order ID is mentioned, set orderId to null. If the query is unrelated to orders, set intent to \"unknown\". " +
+                "Do not include markdown formatting or explanations. Just the JSON.";
+
+        LlmRequest request = LlmRequest.builder()
+                .contents(List.of(
+                        Content.builder().role("user").parts(List.of(Part.builder().text(systemPrompt + "\n\nUser Query: " + question).build())).build()
+                ))
+                .build();
+
+        LlmResponse response = llmClient.chatCompletion("gemini-3.6-flash", request, apiKey);
+
+        String rawJson = response.getCandidates().get(0).getContent().getParts().get(0).getText();
+        // Clean JSON in case LLM returns it with markdown blocks
+        rawJson = rawJson.replaceAll("```json", "").replaceAll("```", "").trim();
+
+        try {
+            return objectMapper.readValue(rawJson, IntentResponse.class);
+        } catch (JsonProcessingException e) {
+            log.error("Failed to parse intent JSON: {}", rawJson);
+            return IntentResponse.builder().intent("unknown").build();
+        }
+    }
+
+    private String generateFinalAnswer(String question, Object data) {
+        String jsonData;
+        try {
+            jsonData = objectMapper.writeValueAsString(data);
+        } catch (JsonProcessingException e) {
+            log.error("Failed to serialize order data to JSON: {}", e.getMessage());
+            jsonData = data.toString();
+        }
+
+        String systemPrompt = "You are a helpful Operations Copilot. Use the following real-time data to answer the customer's question. " +
+                "Be polite, professional, and grounded ONLY in the provided data. " +
+                "Data: " + jsonData;
+
+        LlmRequest request = LlmRequest.builder()
+                .contents(List.of(
+                        Content.builder().role("user").parts(List.of(Part.builder().text(systemPrompt + "\n\nUser Question: " + question).build())).build()
+                ))
+                .build();
+
+        LlmResponse response = llmClient.chatCompletion("gemini-3.6-flash", request, apiKey);
+        return response.getCandidates().get(0).getContent().getParts().get(0).getText();
+    }
+}
