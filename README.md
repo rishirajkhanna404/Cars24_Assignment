@@ -33,7 +33,7 @@ An AI-powered backend service designed to help operations teams answer customer 
 1. **Run the Application**:
    Run the application by providing the Gemini API key as an environment variable:
    ```bash
-   GEMINI_API_KEY=your_api_key_here ./mvnw spring-boot:run
+   GEMINI_API_KEY='your_api_key_here' ./mvnw spring-boot:run
    ```
    The server will start on `http://localhost:8080`.
 
