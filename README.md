@@ -1,7 +1,7 @@
 # AI Operations Copilot - Cars24 Backend Assignment
 
-**Live Working video:** https://github.com/rishirajkhanna404/Cars24_Assignment_Rishi_Raj_Khanna/raw/main/assets/demo.mp4
-
+**Live Working video:** https://youtu.be/1zzSSjTDEm4
+**Download video:** https://github.com/rishirajkhanna404/Cars24_Assignment_Rishi_Raj_Khanna/raw/main/assets/demo.mp4
 
 
 An AI-powered backend service designed to help operations teams answer customer and operational queries about orders using natural language.
