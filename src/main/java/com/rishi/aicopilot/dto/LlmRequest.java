@@ -1,5 +1,6 @@
 package com.rishi.aicopilot.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import java.util.List;
 
@@ -10,5 +11,7 @@ import java.util.List;
 @Builder
 public class LlmRequest {
     private List<Content> contents;
+
+    @JsonProperty("system_instruction")
     private SystemInstruction systemInstruction;
 }
