@@ -72,9 +72,11 @@ public class CopilotService {
                 ))
                 .build();
 
+        log.info(">>> Sending request to LLM for Intent Extraction. Question: {}", question);
         LlmResponse response = llmClient.chatCompletion("gemini-3.6-flash", request, apiKey);
-
         String rawJson = response.getCandidates().get(0).getContent().getParts().get(0).getText();
+        log.info("<<< Received response from LLM for Intent Extraction: {}", rawJson);
+
         // Clean JSON in case LLM returns it with markdown blocks
         rawJson = rawJson.replaceAll("```json", "").replaceAll("```", "").trim();
 
@@ -105,7 +107,11 @@ public class CopilotService {
                 ))
                 .build();
 
+        log.info(">>> Sending request to LLM for Final Answer Generation. Data: {}", jsonData);
         LlmResponse response = llmClient.chatCompletion("gemini-3.6-flash", request, apiKey);
-        return response.getCandidates().get(0).getContent().getParts().get(0).getText();
+        String answer = response.getCandidates().get(0).getContent().getParts().get(0).getText();
+        log.info("<<< Received grounded answer from LLM: {}", answer);
+
+        return answer;
     }
 }
