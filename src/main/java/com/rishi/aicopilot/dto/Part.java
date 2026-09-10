@@ -7,6 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Choice {
-    private Message message;
+public class Part {
+    private String text;
 }

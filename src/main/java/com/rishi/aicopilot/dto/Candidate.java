@@ -1,13 +1,12 @@
 package com.rishi.aicopilot.dto;
 
 import lombok.*;
-import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LlmResponse {
-    private List<Candidate> candidates;
+public class Candidate {
+    private Content content;
 }

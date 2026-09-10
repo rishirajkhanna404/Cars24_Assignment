@@ -16,7 +16,7 @@ public class LlmFeignConfig {
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
-            requestTemplate.header("Authorization", "Bearer " + apiKey);
+            requestTemplate.header("x-goog-api-key", apiKey);
             requestTemplate.header("Content-Type", "application/json");
         };
     }

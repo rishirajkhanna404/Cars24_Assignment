@@ -8,7 +8,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LlmRequest {
-    private List<Content> contents;
-    private SystemInstruction systemInstruction;
+public class SystemInstruction {
+    private List<Part> parts;
 }
