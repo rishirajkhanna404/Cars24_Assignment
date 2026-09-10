@@ -1,6 +1,6 @@
 # AI Operations Copilot - Cars24 Backend Assignment
 
-<video src="assets/demo.mp4" width="800" controls></video>
+https://github.com/rishirajkhanna404/Cars24_Assignment_Rishi_Raj_Khanna/raw/main/assets/demo.mp4
 
 
 
