@@ -1,6 +1,6 @@
 # AI Operations Copilot - Cars24 Backend Assignment
 
-https://github.com/rishirajkhanna404/Cars24_Assignment_Rishi_Raj_Khanna/raw/main/assets/demo.mp4
+**Live Working video:** https://github.com/rishirajkhanna404/Cars24_Assignment_Rishi_Raj_Khanna/raw/main/assets/demo.mp4
 
 
 
@@ -29,15 +29,10 @@ An AI-powered backend service designed to help operations teams answer customer 
 - A Google Gemini API Key
 
 ### Running the Application
-1. **Set the API Key**:
-   The application requires a Gemini API key to function. Set it as an environment variable:
+1. **Run the Application**:
+   Run the application by providing the Gemini API key as an environment variable:
    ```bash
-   export GEMINI_API_KEY=your_api_key_here
-   ```
-
-2. **Start the Application**:
-   ```bash
-   mvn spring-boot:run
+   GEMINI_API_KEY=your_api_key_here ./mvnw spring-boot:run
    ```
    The server will start on `http://localhost:8080`.
 
